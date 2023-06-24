@@ -1,0 +1,44 @@
+{
+  "hash": "37c6d6ec",
+  "browserHash": "c251fe71",
+  "optimized": {
+    "solid-js": {
+      "src": "../../node_modules/.deno/solid-js@1.7.6/node_modules/solid-js/dist/dev.js",
+      "file": "solid-js.js",
+      "fileHash": "be31d869",
+      "needsInterop": false
+    },
+    "solid-js/web": {
+      "src": "../../node_modules/.deno/solid-js@1.7.6/node_modules/solid-js/web/dist/dev.js",
+      "file": "solid-js_web.js",
+      "fileHash": "9735a034",
+      "needsInterop": false
+    },
+    "solid-js/store": {
+      "src": "../../node_modules/.deno/solid-js@1.7.6/node_modules/solid-js/store/dist/dev.js",
+      "file": "solid-js_store.js",
+      "fileHash": "064848e5",
+      "needsInterop": false
+    },
+    "solid-js/html": {
+      "src": "../../node_modules/.deno/solid-js@1.7.6/node_modules/solid-js/html/dist/html.js",
+      "file": "solid-js_html.js",
+      "fileHash": "933270ea",
+      "needsInterop": false
+    },
+    "solid-js/h": {
+      "src": "../../node_modules/.deno/solid-js@1.7.6/node_modules/solid-js/h/dist/h.js",
+      "file": "solid-js_h.js",
+      "fileHash": "dd3f3ca3",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-BER4DKEN": {
+      "file": "chunk-BER4DKEN.js"
+    },
+    "chunk-NEO44B5A": {
+      "file": "chunk-NEO44B5A.js"
+    }
+  }
+}
