@@ -1,30 +1,34 @@
-# Vite + Deno + Solid + TypeScript
+## Usage
 
-## Running
+Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
 
-You need to have Deno v1.28.0 or later installed to run this repo.
+This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
 
-Start a dev server:
-
-```
-$ deno task dev
+```bash
+$ npm install # or pnpm install or yarn install
 ```
 
-## Deploy
+### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
 
-Build production assets:
+## Available Scripts
 
-```
-$ deno task build
-```
+In the project directory, you can run:
 
-## Notes
+### `npm run dev` or `npm start`
 
-- You need to use `.mjs` or `.mts` extension for the `vite.config.[ext]` file.
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Papercuts
+The page will reload if you make edits.<br>
 
-Currently there's a "papercut" for Deno users:
+### `npm run build`
 
-- peer dependencies need to be referenced in `vite.config.js` - in this example
-  it is only `solid-js` package that needs to be referenced
+Builds the app for production to the `dist` folder.<br>
+It correctly bundles Solid in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+## Deployment
+
+You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
