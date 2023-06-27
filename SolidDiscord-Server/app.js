@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const http = require('http')
 const { Server } = require('socket.io');
+const bodyParser = require('body-parser')
 
 const port = 3000;
 const app = express();
@@ -17,15 +18,37 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./db/test.db');
 
 app.use(cors());
+//app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 
 app.get('/api/posts', (req, res) => {
     res.send("get all posts")
 })
 
-app.get('/api/posts/:id', (req, res) => {
-    let id = req.params["id"]
-    db.get('select * from posts where id= $id', {$id: id}, function(err,row) {
+app.get('/api/channels', (req, res) => {
+    db.all('select * from channels', function(err, row) {
         res.send(row);
+    });
+})
+
+app.post('/api/new', (req, res) => {
+    const p = req.body;
+    console.log(p);
+    res.send("Created");
+})
+
+app.get('/api/channel/:id', (req, res) => {
+    let id = req.params["id"]
+    let out;
+    // TODO: It definitly need changing
+    db.get('select * from channels where channel_id= $id', {$id: id}, function(err,row) {
+        out = row;
+    });
+    db.all('select * from messages where channel_id= $id', {$id: id}, function(err,row) {
+        out.messages = row;
+        res.send(out);
     });
 })
 
