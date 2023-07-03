@@ -1,12 +1,26 @@
-const express = require('express')
-const cors = require('cors')
-const http = require('http')
-const { Server } = require('socket.io');
-const bodyParser = require('body-parser')
+//const express = require('express')
+import express from 'express';
+import cors from 'cors';
+import http from 'http';
+import {Server} from 'socket.io';
+import bodyParser from 'body-parser';
+import sqlite3 from 'sqlite3';
+//import { Http3Server } from '@fails-components/webtransport';
 
 const port = 3000;
 const app = express();
 const server = http.createServer(app);
+
+/*
+const h3Server = new Http3Server({
+    port: 3000,
+    secret: "wtf",
+    cert: "wtdf",
+    privKey: "asfs"
+});
+h3.startServer();
+*/
+
 const io = new Server(server,
     {
         cors: {
@@ -14,7 +28,6 @@ const io = new Server(server,
         }
     });
 
-const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./db/test.db');
 
 app.use(cors());
